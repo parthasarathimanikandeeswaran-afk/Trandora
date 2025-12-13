@@ -87,7 +87,7 @@ Update your connection string in appsettings.json:
 
 Clone the repository:
 
-git clone https://github.com/YOUR_USERNAME/Trandora.git
+git clone https://github.com/parthasarathimanikandeeswaran-afk/Trandora.git
 
 
 Open the project in Visual Studio 2022
