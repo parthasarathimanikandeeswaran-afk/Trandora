@@ -1,4 +1,5 @@
 🛒 Trandora – ASP.NET Core MVC E-Commerce Application
+
 📌 Overview
 
 Trandora is a full-stack e-commerce web application built using ASP.NET Core MVC that demonstrates real-world online shopping functionality. The project is designed with clean MVC architecture and includes user authentication, product management, cart operations, checkout, and order processing. It uses ADO.NET with SQL Server for database interactions and cookie-based authentication for user session management.
