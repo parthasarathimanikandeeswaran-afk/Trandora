@@ -1,0 +1,181 @@
+﻿
+/* ===== Base Reset and Body ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: burlywood;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 126px;
+}
+
+    header .logo {
+        height: 90px; /* slightly larger for better display */
+    }
+
+/* Large screen nav links */
+.nav-option-large a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+    .nav-option-large a:hover {
+        color: #007BFF;
+    }
+
+/* ===== Mobile nav ===== */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #333;
+}
+
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 126px; /* below header */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+
+    .mobile-nav.show {
+        display: flex;
+    }
+
+    .mobile-nav a {
+        padding: 10px 0;
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+    }
+
+        .mobile-nav a:hover {
+            color: #007BFF;
+        }
+
+/* ===== Main content ===== */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ===== Table styles ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    overflow-x: auto;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+tfoot td {
+    font-weight: bold;
+}
+
+/* ===== Form styles ===== */
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+    .checkout-form label {
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .checkout-form input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .checkout-form .btn {
+        padding: 12px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .checkout-form .btn:hover {
+            background-color: #0056b3;
+        }
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .nav-option-large {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    table, th, td {
+        font-size: 14px;
+    }
+
+    main {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: auto;
+        padding: 10px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+        header .logo {
+            height: 45px;
+            margin-bottom: 10px;
+        }
+
+    .mobile-nav {
+        top: 100px;
+        padding: 10px 20px;
+    }
+}

@@ -1,0 +1,222 @@
+﻿/* === Base Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* === Header === */
+.header {
+    background: burlywood;
+    padding: 15px 5%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    height: 90px;
+}
+
+.nav-large a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+    .nav-large a:hover,
+    .nav-large a.active {
+        color: #ffeb3b;
+    }
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* Mobile Nav */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+    .mobile-nav.show {
+        display: flex;
+    }
+
+    .mobile-nav a {
+        padding: 12px 20px;
+        text-decoration: none;
+        color: #333;
+        border-bottom: 1px solid #eee;
+    }
+
+/* === About Page === */
+.about-section {
+    padding: 60px 5%;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+    .about-section h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+
+    .about-section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 40px;
+    }
+
+.about-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.about-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 280px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+    .about-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .about-card i {
+        font-size: 2rem;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+.team-title {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.team-member {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 230px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+    .team-member:hover {
+        transform: translateY(-5px);
+    }
+
+    .team-member img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+
+/* === Contact Page === */
+.contact-section {
+    padding: 60px 5%;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+    .contact-section h1 {
+        font-size: 2.3rem;
+        margin-bottom: 20px;
+    }
+
+    .contact-section p {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+
+.contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.contact-card {
+    background: #fff;
+    padding: 25px;
+    width: 280px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+    .contact-card i {
+        font-size: 2rem;
+        color: #007bff;
+        margin-bottom: 10px;
+    }
+
+.map-container {
+    margin-top: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background: burlywood;
+    color: #333;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-large {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .about-cards, .team-container, .contact-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}

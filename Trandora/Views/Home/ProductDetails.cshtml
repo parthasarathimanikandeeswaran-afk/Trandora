@@ -1,0 +1,108 @@
+﻿@model Trandora.Models.Product
+@{
+    Layout = null;
+}
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+ <link href="~/css/ProductDetails.css" rel="stylesheet" />
+
+    <header>
+        <img src="https://i.ibb.co/n43vmzW/logo.png" class="logo" alt="logo" />
+
+        <nav class="nav-option-large">
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="Products">Products</a>
+        <a asp-controller="Home" asp-action="Cart">Cart</a>
+        <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+        <a asp-controller="Home" asp-action="About">About</a>
+        <a asp-controller="Home" asp-action="Contact">Contact</a>
+        <a asp-controller="Home" asp-action="Logout">Logout</a>
+        </nav>
+
+        <i class="fas fa-bars hamburger" id="hamburgerBtn"></i>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav">
+    <a asp-controller="Home" asp-action="Index">Home</a>
+    <a asp-controller="Home" asp-action="Products">Products</a>
+    <a asp-controller="Home" asp-action="Cart">Cart</a>
+    <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+    <a asp-controller="Home" asp-action="About">About</a>
+    <a asp-controller="Home" asp-action="Contact">Contact</a>
+    <a asp-controller="Home" asp-action="Logout">Logout</a>
+    </nav>
+
+   
+    @if (Model == null)
+    {
+        <main class="product-details-container">
+            <h2>Product not found.</h2>
+            <a asp-controller="Home" asp-action="Products" class="back-btn">← Back to Product List</a>
+        </main>
+    }
+    else{
+   
+
+@if (Model == null)
+{
+     <main class="product-details-container">
+        <h2>Product not found.</h2>
+        <a asp-controller="Home" asp-action="Products">Back to Product List</a>
+    </main>
+}
+else
+{
+    <main class="product-details-container">
+        <div class="image-section">
+            <img src="@Model.ImageUrl" alt="@Model.Name" style="max-width:400px;" />
+        </div>
+
+        <div class="details-section">
+            <h1 class="product-title">@Model.Name</h1>
+            <div class="rating">★★★★☆</div>
+            <p class="price">$@Model.Price.ToString("N2")</p>
+
+            <div class="description">
+                <h3>Description</h3>
+                <p>
+                     @Model.Description
+                </p>
+            </div>
+
+           
+            <form asp-controller="Home" asp-action="AddToCart" method="post">
+                <input type="hidden" name="productId" value="@Model.ProductId" />
+
+                <div class="options">
+                    <label for="quantity">Quantity:</label>
+                     <input type="number" id="quantity" name="quantity" value="1" min="1"
+                           max="@Model.Stock"> @* Fixed: Stock is a non-nullable 'int', accessing .HasValue or .Value caused an error. *@
+                </div>
+
+                <div class="buttons">
+                     <button type="submit" class="btn-add-cart">Add to Cart</button>
+
+                   
+                </div>
+            </form>
+        </div>
+    </main>
+}
+
+    }
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburgerBtn = document.getElementById("hamburgerBtn");
+            const mobileNav = document.getElementById("mobileNav");
+
+            hamburgerBtn.addEventListener("click", () => {
+                mobileNav.classList.toggle("show");
+                hamburgerBtn.classList.toggle("active");
+            });
+        });
+    </script>

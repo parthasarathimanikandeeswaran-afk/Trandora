@@ -1,0 +1,107 @@
+﻿ @model IEnumerable<CartItem>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="~/css/Index.css?v=3" rel="stylesheet" />
+<link href="~/css/cart.css" rel="stylesheet" />
+
+<header>
+    <img src="https://i.ibb.co/n43vmzW/logo.png" class="logo" alt="logo" />
+
+    <nav class="nav-option-large">
+           <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="Products">Products</a>
+        <a asp-controller="Home" asp-action="Cart">Cart</a>
+        <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+        <a asp-controller="Home" asp-action="About">About</a>
+        <a asp-controller="Home" asp-action="Contact">Contact</a>
+        <a asp-controller="Home" asp-action="Logout">Logout</a>
+    </nav>
+
+    <i class="fas fa-bars hamburger" id="hamburgerBtn"></i>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+          <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="Products">Products</a>
+        <a asp-controller="Home" asp-action="Cart">Cart</a>
+        <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+        <a asp-controller="Home" asp-action="About">About</a>
+        <a asp-controller="Home" asp-action="Contact">Contact</a>
+        <a asp-controller="Home" asp-action="Logout">Logout</a>
+</nav>
+
+
+<main class="cart-container">
+    <h2>Your Shopping Cart</h2>
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="empty-cart">
+            <img src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png" alt="Empty Cart" />
+            <p>Your cart is empty!</p>
+            <a asp-controller="Home" asp-action="Products" class="btn-shop">Shop Now</a>
+        </div>
+    }
+    else
+    {
+        <div class="cart-table-wrapper">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+               <tbody>
+@foreach (var item in Model)
+{
+    <tr>
+        <td data-label="Product">@item.ProductName</td>
+        <td data-label="Price">₹@item.Price</td>
+        <td data-label="Quantity">@item.Quantity</td>
+        <td data-label="Total">₹@(item.Price * item.Quantity)</td>
+        <td data-label="Action">
+            <a asp-action="Remove" asp-route-id="@item.CartItemId"class="btn-remove">
+                Remove
+            </a>
+
+
+
+        </td>
+    </tr>
+}
+</tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="cart-footer">
+            <a asp-controller="Home" asp-action="Checkout" class="btn-checkout">Proceed to Checkout</a>
+        </div>
+    }
+</main>
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const mobileNav = document.getElementById("mobileNav");
+
+        if (hamburgerBtn && mobileNav) {
+            hamburgerBtn.addEventListener("click", () => {
+                mobileNav.classList.toggle("show");
+                hamburgerBtn.classList.toggle("active");
+            });
+        }
+    });
+</script>

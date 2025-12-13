@@ -1,0 +1,107 @@
+﻿/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #e6f0fa;
+    color: #333;
+}
+
+/* Background */
+.Register-page-bg {
+    background-color: #e6f0fa;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Form Container */
+.Register-form-container {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.heading {
+    text-align: center;
+    color: #0b69ff;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+/* Input Fields */
+.input-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+    .input-container label {
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: #475569;
+    }
+
+.input-box {
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #d7dfe9;
+    border-radius: 5px;
+    background-color: #e2e8f0;
+    color: #333;
+    font-size: 14px;
+}
+
+    .input-box:focus {
+        border-color: #0b69ff;
+        outline: none;
+    }
+
+/* Validation Messages */
+.span {
+    font-size: 13px;
+    color: #ff0b37;
+    margin-top: 4px;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    background-color: #0b69ff;
+    color: #fff;
+    font-weight: bold;
+    height: 40px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+    .btn-submit:hover {
+        background-color: #084dcc;
+    }
+
+/* Responsive */
+@media (min-width: 768px) {
+    .Register-form-container {
+        padding: 40px;
+    }
+
+    .heading {
+        font-size: 26px;
+    }
+
+    .btn-submit {
+        font-size: 16px;
+    }
+}
