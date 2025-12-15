@@ -74,6 +74,7 @@ Trandora
 ├── Program.cs
 └── Trandora.csproj
 
+
 ⚙️ Database Configuration
 
 The application uses SQL Server LocalDB.
@@ -143,7 +144,7 @@ Contact Page
 
 👨‍💻 Author
 
-Sarathi M
+Parthasarathi M
 B.Sc Computer Science | ASP.NET Core MVC Developer
 
 📄 License
