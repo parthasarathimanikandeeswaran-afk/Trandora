@@ -1,0 +1,267 @@
+﻿/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* ===== PRODUCTS / ORDERS GRID ===== */
+.products-page,
+.orders-page {
+    padding: 60px 6%;
+}
+
+.product-grid,
+.orders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.product-card,
+.order-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-img img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.product-info h3,
+.order-header h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.price {
+    font-size: 1.3rem;
+    color: #28a745;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.view-btn {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+    .view-btn:hover {
+        background-color: #0056b3;
+    }
+
+/* ===== ORDER CARD ===== */
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+    .order-header span {
+        font-size: 0.9rem;
+        color: #777;
+    }
+
+.order-details p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+}
+
+/* ===== BUTTONS ===== */
+.btn-add-cart,
+.btn-order-now {
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-add-cart {
+    background-color: #007bff;
+    color: white;
+}
+
+    .btn-add-cart:hover {
+        background-color: #0056b3;
+    }
+
+.btn-order-now {
+    background-color: #28a745;
+    color: white;
+}
+
+    .btn-order-now:hover {
+        background-color: #1e7e34;
+    }
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+    .products-page,
+    .orders-page {
+        padding: 40px 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid,
+    .orders-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .product-info h3,
+    .order-header h3 {
+        font-size: 1rem;
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+
+    .view-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+/*
+
+
+
+navbar
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===== HEADER / NAVBAR ===== */
+header {
+    background-color: burlywood;
+    color: white;
+    padding: 25px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo {
+    height: 55px;
+}
+
+.nav-option-large {
+    display: flex;
+    gap: 25px;
+}
+
+    .nav-option-large a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+
+        .nav-option-large a:hover {
+            color: #ffeb3b;
+        }
+
+/* Hamburger for mobile */
+.hamburger {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+}
+#hamburger{
+    display:none;
+}
+/* Mobile nav */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: burlywood;
+    padding: 15px 30px;
+    width: 100%;
+    position: absolute;
+    top: 80px; /* below header */
+    left: 0;
+    z-index: 999;
+}
+
+    .mobile-nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 0;
+        font-weight: 500;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .mobile-nav a:first-child {
+            border-top: none;
+        }
+
+    .mobile-nav.show {
+        display: flex;
+    }
+
+/* ===== RESPONSIVE DESIGN FOR NAV ===== */
+@media (max-width: 768px) {
+    .nav-option-large {
+        display: none;
+    }
+    #hamburger{
+        display:inline-block;
+    }
+
+    .hamburger {
+        display: inline-block;
+    }
+}

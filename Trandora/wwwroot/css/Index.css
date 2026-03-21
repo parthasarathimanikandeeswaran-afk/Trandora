@@ -1,0 +1,180 @@
+﻿/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f6fc;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: burlywood;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.logo {
+    width: 140px;
+}
+
+/* Desktop nav */
+.nav-option-large {
+    display: flex;
+    gap: 25px;
+}
+
+    .nav-option-large a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+
+        .nav-option-large a:hover {
+            color: #ffeb3b;
+        }
+
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+    /* When menu active (rotate icon) */
+    .hamburger.active {
+        transform: rotate(90deg);
+    }
+
+/* ===== MOBILE NAV ===== */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: burlywood;
+    padding: 15px 30px;
+    width: 100%;
+}
+
+    .mobile-nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 0;
+        font-weight: 500;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .mobile-nav a:first-child {
+            border-top: none;
+        }
+
+    /* Show mobile nav when toggled */
+    .mobile-nav.show {
+        display: flex;
+    }
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+    min-height: calc(100vh - 80px);
+    width: 100%;
+    background-color: #f3f6fc;
+}
+
+.content-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    padding: 0 50px;
+}
+
+.text-section {
+    flex: 1 1 400px;
+}
+
+.content-for-website {
+    font-size: 32px;
+    color: #0b69ff;
+    margin-bottom: 20px;
+}
+
+.paragrah-home {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #0b69ff;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .btn:hover {
+        background-color: #084dcc;
+    }
+
+.image-section {
+    flex: 1 1 400px;
+    text-align: center;
+}
+
+.home-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .nav-option-large {
+        display: none;
+    }
+
+    .hamburger {
+        display: inline-block;
+    }
+
+    .content-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .text-section {
+        padding: 0 10px;
+    }
+}
+
+/* ===== OPTIONAL: REMOVE GHOST SPACE ===== */
+.ham {
+    display: none;
+}

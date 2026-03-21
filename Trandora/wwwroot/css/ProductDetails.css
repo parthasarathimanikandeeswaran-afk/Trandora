@@ -1,0 +1,265 @@
+﻿/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* ===== HEADER / NAVBAR ===== */
+header {
+    background-color: burlywood;
+    color: white;
+    padding: 25px 6%; /* Increase for taller navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo {
+    height: 55px;
+}
+
+.nav-option-large {
+    display: flex;
+    gap: 25px;
+}
+
+    .nav-option-large a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        font-size: 16px;
+        transition: color 0.3s ease;
+    }
+
+        .nav-option-large a:hover {
+            color: #ffeb3b;
+        }
+
+/* Hamburger for mobile */
+.hamburger {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Mobile nav */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background-color: burlywood;
+    padding: 15px 30px;
+    width: 100%;
+}
+
+    .mobile-nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 0;
+        font-weight: 500;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+        .mobile-nav a:first-child {
+            border-top: none;
+        }
+
+    .mobile-nav.show {
+        display: flex;
+    }
+
+/* ===== PRODUCT DETAILS SECTION ===== */
+.product-details-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding: 60px 6%;
+}
+
+.image-section {
+    flex: 1 1 400px;
+    text-align: center;
+}
+
+    .image-section img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+.details-section {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.product-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.rating {
+    color: #fbc02d;
+    font-size: 1.2rem;
+}
+
+.price {
+    font-size: 1.5rem;
+    color: #28a745;
+    font-weight: 600;
+}
+
+.description {
+    margin-top: 15px;
+    color: #555;
+}
+
+    .description h3 {
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+.options {
+    margin-top: 20px;
+}
+
+    .options label {
+        margin-right: 10px;
+        font-weight: 500;
+    }
+
+    .options input {
+        width: 60px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+/* ===== BUTTONS ===== */
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-add-cart,
+.btn-order-now {
+    border: none;
+    border-radius: 6px;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-add-cart {
+    background-color: #007bff;
+    color: white;
+}
+
+    .btn-add-cart:hover {
+        background-color: #0056b3;
+    }
+
+.btn-order-now {
+    background-color: #28a745;
+    color: white;
+}
+
+    .btn-order-now:hover {
+        background-color: #1e7e34;
+    }
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+    .back-btn:hover {
+        background-color: #5a6268;
+    }
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+    .product-details-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .image-section,
+    .details-section {
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-option-large {
+        display: none;
+    }
+
+    .hamburger {
+        display: inline-block;
+    }
+
+    .product-title {
+        font-size: 1.8rem;
+    }
+
+    .price {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 20px;
+    }
+
+    .logo {
+        height: 45px;
+    }
+
+    .product-title {
+        font-size: 1.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn-add-cart,
+    .btn-order-now {
+        width: 100%;
+    }
+}
