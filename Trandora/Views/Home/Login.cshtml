@@ -1,0 +1,28 @@
+﻿@*
+  
+*@
+@{
+}
+<head>
+    <link href="~/css/Login.css" rel="stylesheet" />
+</head>
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form asp-action="Login" method="post">
+        <label>Email:</label>
+        <input type="email" name="email" required />
+        <br />
+        <label>Password:</label>
+        <input type="password" name="password" required />
+        <br />
+        <button type="submit">Login</button>
+    </form>
+
+    @if (!string.IsNullOrEmpty(ViewBag.Error as string))
+    {
+        <p class="error-message">@ViewBag.Error</p>
+    }
+
+    <a asp-controller="Home" asp-action="Register">Don't have an account? Register</a>
+</div>

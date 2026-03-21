@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Order Successful";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="~/css/OrderSuccess.css" rel="stylesheet" />
+
+<header>
+    <img src="https://i.ibb.co/n43vmzW/logo.png" class="logo" alt="logo" />
+
+    <nav class="nav-option-large">
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="Products">Products</a>
+        <a asp-controller="Home" asp-action="Cart">Cart</a>
+        <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+        <a asp-controller="Home" asp-action="About">About</a>
+        <a asp-controller="Home" asp-action="Contact">Contact</a>
+        <a asp-controller="Home" asp-action="Logout">Logout</a>
+        <i class="fas fa-bars hamburger" id="h"></i>
+    </nav>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="Products">Products</a>
+        <a asp-controller="Home" asp-action="Cart">Cart</a>
+        <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+        <a asp-controller="Home" asp-action="About">About</a>
+        <a asp-controller="Home" asp-action="Contact">Contact</a>
+        <a asp-controller="Home" asp-action="Logout">Logout</a>
+    </nav>
+</header >
+
+            <main style="text-align:center; margin-top: 50px;">
+            <i class="fas fa-check-circle" style="font-size: 80px; color: green;"></i>
+            <h2>Your order has been placed successfully!</h2>
+            <p>Thank you for shopping with Trandora.</p>
+            <a class="btn btn-primary" asp-controller="Home" asp-action="Index">Back to Home</a>
+</main>

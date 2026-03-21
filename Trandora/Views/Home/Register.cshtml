@@ -1,0 +1,39 @@
+﻿@*
+   
+*@
+@{
+}
+@model Trandora.Models.User;
+<link href="~/css/Register.css" rel="stylesheet" />
+<div class="Register-page-bg">
+    <div class="Register-form-container">
+        <h2 class="heading">Create Account</h2>
+
+        <div asp-validation-summary="All" class="span"></div>
+
+        <form method="post">
+            <div class="input-container">
+                <label>User Name</label><br />
+                <input asp-for="Name" class="input-box" placeholder="Enter Username" required />
+                <span asp-validation-for="Name" class="span"></span>
+            </div>
+
+
+            <div class="input-container">
+                <label asp-for="Email"></label><br />
+                <input asp-for="Email" type="email" class="input-box" placeholder="Enter Email" required />
+                <span asp-validation-for="Email" class="span"></span>
+            </div>
+
+
+            <div class="input-container">
+                <label asp-for="Password"></label><br />
+                <input asp-for="Password" type="password" class="input-box" placeholder="Enter Password" required />
+                <span asp-validation-for="Password" class="span"></span>
+            </div>
+
+
+            <button type="submit" class="btn-submit">Register</button>
+        </form>
+    </div>
+</div>

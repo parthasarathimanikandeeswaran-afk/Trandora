@@ -1,0 +1,85 @@
+﻿@model Trandora.Models.Order
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+
+<link href="~/css/AllOrders.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<header>
+    <img src="https://i.ibb.co/n43vmzW/logo.png" class="logo" alt="logo" />
+
+    <nav class="nav-option-large">
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="Products">Products</a>
+        <a asp-controller="Home" asp-action="Cart">Cart</a>
+        <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+        <a asp-controller="Home" asp-action="About">About</a>
+        <a asp-controller="Home" asp-action="Contact">Contact</a>
+        <a asp-controller="Home" asp-action="Logout">Logout</a>
+    </nav>
+
+    <i class="fas fa-bars hamburger" id="hamburgerBtn"></i>
+</header>
+
+
+<nav class="mobile-nav" id="mobileNav">
+    <a asp-controller="Home" asp-action="Index">Home</a>
+    <a asp-controller="Home" asp-action="Products">Products</a>
+    <a asp-controller="Home" asp-action="Cart">Cart</a>
+    <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+    <a asp-controller="Home" asp-action="About">About</a>
+    <a asp-controller="Home" asp-action="Contact">Contact</a>
+    <a asp-controller="Home" asp-action="Logout">Logout</a>
+</nav>
+
+
+<main class="orders-page">
+    <h2>Order #@Model.OrderId Details</h2>
+
+
+    <div class="order-card">
+        <div class="order-details">
+            <p><strong>Name:</strong> @Model.Name</p>
+            <p><strong>Phone:</strong> @Model.Phone</p>
+            <p><strong>Address:</strong> @Model.Address</p>
+            <p><strong>Total:</strong> ₹@Model.Total</p>
+           
+        </div>
+    </div>
+
+
+    <h3>Products in this Order</h3>
+    <div class="orders-grid">
+        @foreach (var item in Model.Items)
+        {
+            <div class="order-card">
+                <div class="order-details">
+                    <p><strong>Product ID:</strong> @item.ProductId</p>
+                    <p><strong>Quantity:</strong> @item.Quantity</p>
+                    <p><strong>Price:</strong> ₹@item.Price</p>
+                    <p><strong>Subtotal:</strong> ₹@(item.Quantity* item.Price)</p>
+                </div>
+            </div>
+        }
+    </div>
+
+    <a asp-action="AllOrders" class="view-btn">Back to All Orders</a>
+</main>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const mobileNav = document.getElementById("mobileNav");
+
+        if (hamburgerBtn && mobileNav) {
+            hamburgerBtn.addEventListener("click", () => {
+                mobileNav.classList.toggle("show");
+                hamburgerBtn.classList.toggle("active");
+            });
+        }
+    });
+</script>

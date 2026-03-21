@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="~/css/Index.css?v=3" rel="stylesheet" />
+
+<header>
+    <img src="https://i.ibb.co/n43vmzW/logo.png" class="logo" alt="logo" />
+
+    <nav class="nav-option-large">
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="Products">Products</a>
+        <a asp-controller="Home" asp-action="Cart">Cart</a>
+        <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+        <a asp-controller="Home" asp-action="About">About</a>
+        <a asp-controller="Home" asp-action="Contact">Contact</a>
+        <a asp-controller="Home" asp-action="Logout">Logout</a>
+    </nav>
+
+    <i class="fas fa-bars hamburger" id="hamburgerBtn"></i>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+    <a asp-controller="Home" asp-action="Index">Home</a>
+    <a asp-controller="Home" asp-action="Products">Products</a>
+    <a asp-controller="Home" asp-action="Cart">Cart</a>
+    <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+    <a asp-controller="Home" asp-action="About">About</a>
+    <a asp-controller="Home" asp-action="Contact">Contact</a>
+    <a asp-controller="Home" asp-action="Logout">Logout</a>
+</nav>
+
+
+<div class="main-content">
+    <div class="content-container">
+        <div class="text-section">
+            <h2 class="content-for-website">Shop Your Favourite Products</h2>
+            <p class="paragrah-home">
+                Find the latest gadgets, fashion, home essentials, and more —
+                all at unbeatable prices. Fast delivery and trusted service,
+                every time.
+            </p>
+            <a style="text-decoration:none;" asp-controller="Home" asp-action="Products">  <button class="btn">Shop Now</button></a>
+        </div>
+        <div class="image-section">
+            <img src="https://i.ibb.co/rGkZWKLf/home-bg.png" class="home-img" alt="home" />
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const mobileNav = document.getElementById("mobileNav");
+
+        if (hamburgerBtn && mobileNav) {
+            hamburgerBtn.addEventListener("click", () => {
+                mobileNav.classList.toggle("show");
+                hamburgerBtn.classList.toggle("active");
+            });
+        }
+    });
+</script>

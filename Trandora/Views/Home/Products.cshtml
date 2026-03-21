@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Trandora.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+<link href="~/css/Products.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<link href="~/css/Index.css?v=3" rel="stylesheet" />
+
+<header>
+    <img src="https://i.ibb.co/n43vmzW/logo.png" class="logo" alt="logo" />
+
+    <nav class="nav-option-large">
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="Products">Products</a>
+        <a asp-controller="Home" asp-action="Cart">Cart</a>
+        <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+        <a asp-controller="Home" asp-action="About">About</a>
+        <a asp-controller="Home" asp-action="Contact">Contact</a>
+        <a asp-controller="Home" asp-action="Logout">Logout</a>
+    </nav>
+
+    <i class="fas fa-bars hamburger" id="hamburgerBtn"></i>
+</header>
+
+<nav class="mobile-nav" id="mobileNav">
+    <a asp-controller="Home" asp-action="Index">Home</a>
+    <a asp-controller="Home" asp-action="Products">Products</a>
+    <a asp-controller="Home" asp-action="Cart">Cart</a>
+    <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+    <a asp-controller="Home" asp-action="About">About</a>
+    <a asp-controller="Home" asp-action="Contact">Contact</a>
+    <a asp-controller="Home" asp-action="Logout">Logout</a>
+</nav>
+
+<main class="products-page">
+
+    <div class="product-grid">
+        @foreach (var product in Model)
+        {
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="@product.ImageUrl" alt="@product.Name" />
+                </div>
+                <div class="product-info">
+                    <h3>@product.Name</h3>
+                    <p class="price">₹@product.Price</p>
+                    <a asp-action="ProductDetails" asp-route-productId="@product.ProductId" class="view-btn">
+                        View Details
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const hamburgerBtn = document.getElementById("hamburgerBtn");
+        const mobileNav = document.getElementById("mobileNav");
+
+        if (hamburgerBtn && mobileNav) {
+            hamburgerBtn.addEventListener("click", () => {
+                mobileNav.classList.toggle("show");
+                hamburgerBtn.classList.toggle("active");
+            });
+        }
+    });
+</script>

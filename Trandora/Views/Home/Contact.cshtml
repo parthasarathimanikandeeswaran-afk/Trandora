@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Trandora</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link href="~/css/Contact.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header class="header">
+        <img src="https://i.ibb.co/n43vmzW/logo.png" class="logo" alt="logo" />
+        <nav class="nav-large">
+            <a asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-controller="Home" asp-action="Products">Products</a>
+            <a asp-controller="Home" asp-action="Cart">Cart</a>
+            <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+            <a asp-controller="Home" asp-action="About">About</a>
+            <a asp-controller="Home" asp-action="Contact">Contact</a>
+            <a asp-controller="Home" asp-action="Logout">Logout</a>
+        </nav>
+        <i class="fas fa-bars hamburger" id="hamburgerBtn"></i>
+    </header>
+
+
+    <nav class="mobile-nav" id="mobileNav">
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Home" asp-action="Products">Products</a>
+        <a asp-controller="Home" asp-action="Cart">Cart</a>
+        <a asp-controller="Home" asp-action="AllOrders">Orders</a>
+        <a asp-controller="Home" asp-action="About">About</a>
+        <a asp-controller="Home" asp-action="Contact">Contact</a>
+        <a asp-controller="Home" asp-action="Logout">Logout</a>
+    </nav>
+
+
+    <section class="contact-section">
+        <h1>Contact Us</h1>
+        <p>Have any questions? We'd love to hear from you! Reach us through the options below.</p>
+
+        <div class="contact-cards">
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Our Address</h3>
+                <p>123 Market Street,<br>Chennai, India</p>
+            </div>
+
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Us</h3>
+                <p>support@trandora.com</p>
+            </div>
+
+            <div class="contact-card">
+                <i class="fas fa-phone"></i>
+                <h3>Call Us</h3>
+                <p>+91 98765 43210</p>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps?q=chennai&t=&z=12&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © 2025 Trandora. All rights reserved.
+    </footer>
+
+    <script>
+        document.getElementById("hamburgerBtn").addEventListener("click", () => {
+          document.getElementById("mobileNav").classList.toggle("show");
+        });
+    </script>
+</body>
+</html>
