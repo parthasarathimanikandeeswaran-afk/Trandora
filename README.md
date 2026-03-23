@@ -42,37 +42,40 @@ IDE: Visual Studio 2022
 Version Control: Git & GitHub
 
 🗂️ Project Structure
-Trandora
+```
+Trandora/
 │
-├── Controllers
+├── Controllers/
 │   └── HomeController.cs
 │
-├── Models
+├── Models/
 │   ├── User.cs
 │   ├── Product.cs
 │   ├── CartItem.cs
 │   ├── Order.cs
 │   └── OrderItem.cs
 │
-├── Repositories
+├── Repositories/
 │   ├── UserRepository.cs
 │   └── ProductRepository.cs
 │
-├── Views
-│   ├── Home
-│   ├── Products
-│   ├── Cart
-│   ├── Orders
-│   └── Shared
+├── Views/
+│   ├── Home/
+│   ├── Products/
+│   ├── Cart/
+│   ├── Orders/
+│   └── Shared/
 │
-├── wwwroot
-│   ├── css
-│   ├── js
-│   └── images
+├── wwwroot/
+│   ├── css/
+│   ├── js/
+│   └── images/
 │
 ├── appsettings.json
 ├── Program.cs
 └── Trandora.csproj
+```
+
 
 
 ⚙️ Database Configuration
@@ -124,8 +127,10 @@ Home Page
 <img width="1893" height="918" alt="Home page" src="https://github.com/user-attachments/assets/6c5586a0-0ba5-4ceb-8c37-a37a121b17d3" />
 
 Products Page
-<img width="1907" height="980" alt="Products page" src="https://github.com/user-attachments/assets/cb73afee-3be2-4d6c-a3a2-380fb9e5e581" />
 <img width="1917" height="970" alt="image" src="https://github.com/user-attachments/assets/c35d9b0a-58d1-4f96-af4a-4537957d28be" />
+
+Product Details
+<img width="1918" height="926" alt="image" src="https://github.com/user-attachments/assets/d5e249fa-e299-48c2-9552-1d0f7d6e0c39" />
 
 
 Cart Page
