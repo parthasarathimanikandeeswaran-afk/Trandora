@@ -125,6 +125,8 @@ Home Page
 
 Products Page
 <img width="1907" height="980" alt="Products page" src="https://github.com/user-attachments/assets/cb73afee-3be2-4d6c-a3a2-380fb9e5e581" />
+<img width="1917" height="970" alt="image" src="https://github.com/user-attachments/assets/c35d9b0a-58d1-4f96-af4a-4537957d28be" />
+
 
 Cart Page
 <img width="1918" height="921" alt="Cart page" src="https://github.com/user-attachments/assets/d1af83f1-f889-4464-a4d4-0a2fd7063fc0" />
